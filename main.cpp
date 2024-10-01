@@ -15,10 +15,18 @@ public:
         : m_Name("Unknown"), m_Age(age) {}
 };
 
+void PrintEntity(const Entity &entity)
+{
+    // Printing stuff
+}
+
 int main()
 {
-    Entity a("AchroDev");
-    Entity b(26);
+    PrintEntity(22);
+    PrintEntity("AchroDev"); // Same error here for the conversion of a const char* to a const char[]
+
+    Entity a = "AchroDev"; // VScode says this is an error, but should be detecting it as a std::string instead of a const char[9]
+    Entity b = 26;         // Thanks to implicit conversion, it is using the Entity constructor with an int value in the parameters
 
     std::cin.get();
 }
