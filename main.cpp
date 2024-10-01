@@ -1,8 +1,24 @@
 #include <iostream>
+#include <string>
 
-#define LOG(x) std::cout << x << std::endl;
+class Entity
+{
+private:
+    std::string m_Name;
+    int m_Age;
 
-int main(){
-    LOG("Hello World!");
+public:
+    Entity(const std::string &name)
+        : m_Name(name), m_Age(-1) {}
+
+    Entity(int age)
+        : m_Name("Unknown"), m_Age(age) {}
+};
+
+int main()
+{
+    Entity a = "AchroDev";
+    Entity b = 22;
+
     std::cin.get();
 }
