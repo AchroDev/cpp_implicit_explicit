@@ -17,8 +17,8 @@ public:
 
 int main()
 {
-    Entity a = "AchroDev";
-    Entity b = 22;
+    Entity a("AchroDev");
+    Entity b(26);
 
     std::cin.get();
 }
